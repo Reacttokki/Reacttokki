@@ -1,33 +1,25 @@
 import { useState, useMemo } from "react";
 import { TaskContext } from "./TaskContext";
 
+const DEFAULT_CATEGORIES = ["Study", "Health", "Productivity", "Personal", "Work"];
+
 export function TaskProvider({ children }) {
   const [plannedTasks, setPlannedTasks] = useState([
-    {
-      id: 1,
-      title: "Lecture recap",
-      category: "Study",
-      startTime: "10:00",
-      endTime: "11:00",
-    },
-    {
-      id: 2,
-      title: "30 min workout",
-      category: "Health",
-      startTime: "12:00",
-      endTime: "12:30",
-    },
+    { id: 1, title: "Lecture recap", category: "Study", startTime: "10:00", endTime: "11:00" },
+    { id: 2, title: "30 min workout", category: "Health", startTime: "12:00", endTime: "12:30" },
   ]);
 
   const [completedTasks, setCompletedTasks] = useState([
-    {
-      id: 3,
-      title: "Plan tomorrow",
-      category: "Productivity",
-      startTime: "23:30",
-      endTime: "24:00",
-    },
+    { id: 3, title: "Plan tomorrow", category: "Productivity", startTime: "23:30", endTime: "24:00" },
   ]);
+
+  const [categories, setCategories] = useState(DEFAULT_CATEGORIES);
+
+  const addCategory = (name) => {
+    const trimmed = name.trim();
+    if (!trimmed || categories.includes(trimmed)) return;
+    setCategories((prev) => [...prev, trimmed]);
+  };
 
   const addTask = (newTask) => {
     setPlannedTasks((prev) => [...prev, newTask]);
@@ -40,7 +32,6 @@ export function TaskProvider({ children }) {
     setCompletedTasks((prev) => [...prev, targetTask]);
   };
 
-  // 오늘의 달성률: completed / (planned + completed) * 100
   const todayPercent = useMemo(() => {
     const total = plannedTasks.length + completedTasks.length;
     if (total === 0) return 0;
@@ -52,6 +43,8 @@ export function TaskProvider({ children }) {
       value={{
         plannedTasks,
         completedTasks,
+        categories,
+        addCategory,
         addTask,
         completeTask,
         todayPercent,

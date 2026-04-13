@@ -109,3 +109,37 @@
 .day-header.sun {
   color: #dc2626 !important;
 }
+
+/* ── Weekly task 블록 ── */
+.cell {
+  position: relative;
+}
+
+.weekly-task-block {
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  border-radius: 6px;
+  padding: 2px 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.weekly-task-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #3a3a5a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.weekly-task-time {
+  font-size: 9px;
+  color: #5a5a7a;
+  white-space: nowrap;
+}

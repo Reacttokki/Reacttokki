@@ -125,6 +125,63 @@
   color: #8a7aaa;
 }
 
+/* ── CategorySelect ── */
+.category-select-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.category-select-row .form-select {
+  flex: 1;
+}
+.category-add-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(180, 160, 220, 0.4);
+  background: rgba(200, 180, 240, 0.25);
+  color: #6a5a8a;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.category-add-btn:hover {
+  background: rgba(200, 180, 240, 0.5);
+}
+.category-add-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.category-add-row .form-input {
+  flex: 1;
+}
+.category-add-confirm {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(160, 130, 210, 0.7);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.category-add-confirm:hover {
+  background: rgba(140, 110, 190, 0.9);
+}
+.category-add-cancel {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(200, 180, 240, 0.3);
+  color: #6a5a8a;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.category-add-cancel:hover {
+  background: rgba(200, 180, 240, 0.5);
+}
+
 /* ── TaskForm (add task 눌렀을 때 오른쪽 컬럼 대체) ── */
 .task-form {
   flex: 1;

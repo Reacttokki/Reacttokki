@@ -89,3 +89,31 @@
     font-size: 13px;
     color: #2c2c2c;
 }
+
+/* ── 오늘 셀 강조 ── */
+.calendar__cell--today {
+    background: rgba(200, 180, 240, 0.12);
+}
+
+/* ── task 칩 목록 ── */
+.calendar__tasks {
+    position: absolute;
+    top: 30px;
+    left: 4px;
+    right: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.calendar__task-chip {
+    border-radius: 4px;
+    padding: 2px 5px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #3a3a5a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.9;
+}
